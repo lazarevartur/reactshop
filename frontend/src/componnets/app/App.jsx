@@ -14,12 +14,9 @@ function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
-          <Route path="/product/:id" exact>
-            <ProductPage />
-          </Route>
-
+          <Route path="/product/:id" component={ProductPage} />
           <Route path="/login" component={SingIn} />
-          <Route path="/cart" exact>
+          <Route path="/cart">
             <CartPage />
           </Route>
         </Container>

@@ -32,6 +32,8 @@ Rating.defaultProps = {
   color: '#f8e825',
   countStars: 5,
   step: 0.5,
+  value: 0,
+  text: 'Reviews',
 }
 Rating.propTypes = {
   value: PropTypes.number.isRequired,
