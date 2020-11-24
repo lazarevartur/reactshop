@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Col, Row, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import useServices from '../../../hooks/useServices'
+import { getDetailProduct } from '../../../redux/action/productListAction'
 import Rating from '../../cardItem/rating/Rating'
+import Loader from '../../loader/Loader'
 
 const ProductPage = ({ match }) => {
-  const { getProduct } = useServices()
-  const [item, setItem] = useState({})
+  const dispatch = useDispatch()
+  const { product, loading } = useSelector((state) => state.productDetail)
 
   React.useEffect(() => {
-    const fetch = async () => {
-      const data = await getProduct(match.params.id)
-      setItem(data)
-    }
-    fetch()
-  }, [match, getProduct])
-  const isStock = item.countInStock > 0
+    dispatch(getDetailProduct(match.params.id))
+  }, [dispatch, match])
+
+  if (loading) return <Loader />
+  const isStock = product.countInStock > 0
   return (
     <>
       <Link className="btn btn light my-3" to="/">
@@ -23,15 +23,18 @@ const ProductPage = ({ match }) => {
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={item.image} alt={item.name} fluid />
+          <Image src={product.image} alt={product.name} fluid />
         </Col>
         <Col md={3}>
           <ListGroup variant={'flush'}>
-            <ListGroup.Item>{item.name}</ListGroup.Item>
+            <ListGroup.Item>{product.name}</ListGroup.Item>
             <ListGroup.Item>
-              <Rating value={item.rating} text={`${item.numReviews} Reviews`} />
+              <Rating
+                value={product.rating}
+                text={`${product.numReviews} Reviews`}
+              />
             </ListGroup.Item>
-            <ListGroup.Item>Description: {item.description}</ListGroup.Item>
+            <ListGroup.Item>Description: {product.description}</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
@@ -41,7 +44,7 @@ const ProductPage = ({ match }) => {
                 <Row>
                   <Col>Price:</Col>
                   <Col>
-                    <strong>{item.price}</strong>
+                    <strong>{product.price}</strong>
                   </Col>
                 </Row>
               </ListGroup.Item>
