@@ -1,29 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Col, Row } from 'react-bootstrap'
 import { CardItem } from '../..'
-import useServices from '../../../hooks/useServices'
+import { getAllProducts } from '../../../redux/action/productListAction'
+import Loader from '../../loader/Loader'
+import Message from '../../message/Message'
 const HomePage = () => {
-  const [product, setProduct] = useState([])
-  const { getAllProduct, redy } = useServices()
+  const dispatch = useDispatch()
+  const { products, loading, error } = useSelector(
+    (state) => state.productsList
+  )
   useEffect(() => {
-    const fetch = async () => {
-      const data = await getAllProduct()
-      setProduct(data)
-    }
-    fetch()
-  }, [getAllProduct])
-  if (!redy) return 'loading...'
+    dispatch(getAllProducts())
+  }, [dispatch])
+
   return (
     <>
-      <Row>
-        {product.map((item) => {
-          return (
-            <Col key={item._id} sm={12} md={6} lg={4}>
-              <CardItem {...item} />
-            </Col>
-          )
-        })}
-      </Row>
+      <h1>LATEST PRODUCTS</h1>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant="danger">{error}</Message>
+      ) : (
+        <Row>
+          {products.map((item) => {
+            return (
+              <Col key={item._id} sm={12} md={6} lg={4}>
+                <CardItem {...item} />
+              </Col>
+            )
+          })}
+        </Row>
+      )}
     </>
   )
 }
