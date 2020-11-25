@@ -9,22 +9,21 @@ import './app.css'
 function App() {
   return (
     <>
-      <Header />
+      <Header/>
       <ErrorBoundry>
         <main className="py-3">
           <Container>
             <Route path="/" exact>
-              <HomePage />
+              <HomePage/>
             </Route>
-            <Route path="/product/:id" component={ProductPage} />
-            <Route path="/login" component={SingIn} />
-            <Route path="/cart">
-              <CartPage />
-            </Route>
+            <Route path="/product/:id" component={ ProductPage }/>
+            <Route path="/cart/:id" component={ CartPage }/>
+            <Route path="/cart" component={ CartPage } exact/>
+            <Route path="/login" component={ SingIn }/>
           </Container>
         </main>
       </ErrorBoundry>
-      <Footer />
+      <Footer/>
     </>
   )
 }
