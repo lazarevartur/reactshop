@@ -2,11 +2,16 @@ import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { en } from '../../language/language'
+import { Login } from '../index';
 
 const { title, singIn, cart } = en
 
 const Header = () => {
+  const [modalShow, setModalShow] = React.useState(false);
+  console.log(modalShow)
+
   return (
+    <>
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
@@ -23,12 +28,11 @@ const Header = () => {
                   Home
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/login">
-                <Nav.Link>
+                <Nav.Link onClick={() => setModalShow(true)}>
                   <i className="fas fa-user px-1"></i>
                   {singIn}
                 </Nav.Link>
-              </LinkContainer>
+
               <LinkContainer to="/cart">
                 <Nav.Link>
                   <i className="fas fa-shopping-cart px-1"></i>
@@ -40,7 +44,11 @@ const Header = () => {
         </Container>
       </Navbar>
     </header>
+      <Login show={modalShow}
+             onHide={() => setModalShow(false)}/>
+    </>
   )
+
 }
 
 export default Header

@@ -5,14 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ace2235-773e-4d11-850a-9bc58e608a7a" name="Default Changelist" comment="added functionality to cart">
-      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/cartPage/cartItem/CartItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controller/productController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controller/userController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/middleware/authMiddleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/loginRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/utils/generateToken.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/utils/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/login/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middelware/errorMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middleware/errorMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/userModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/productRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/componnets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/cartPage/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/cartPage/CartPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/productPage/ProductPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/productPage/ProductPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/action/cartAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/action/cartAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/cartReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/singIn/SingIn.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +60,23 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 203.5981.31\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -62,7 +92,10 @@
       <workItem from="1606258390170" duration="563000" />
       <workItem from="1606258972735" duration="275000" />
       <workItem from="1606259266849" duration="11144000" />
-      <workItem from="1606298277297" duration="13386000" />
+      <workItem from="1606298277297" duration="14919000" />
+      <workItem from="1606389068146" duration="601000" />
+      <workItem from="1606430250545" duration="12745000" />
+      <workItem from="1606515879919" duration="14035000" />
     </task>
     <task id="LOCAL-00001" summary="added functionality to cart">
       <created>1606270433135</created>

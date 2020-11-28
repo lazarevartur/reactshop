@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Route } from 'react-router-dom'
-import { CartPage, Footer, Header, HomePage, ProductPage, SingIn } from '..'
+import { CartPage, Footer, Header, HomePage, ProductPage, Login } from '..'
 import ErrorBoundry from '../errorBoundry/error-boundry'
 
 import './app.css'
@@ -19,7 +19,7 @@ function App() {
             <Route path="/product/:id" component={ ProductPage }/>
             <Route path="/cart/:id" component={ CartPage }/>
             <Route path="/cart" component={ CartPage } exact/>
-            <Route path="/login" component={ SingIn }/>
+            <Route path="/login" component={ Login }/>
           </Container>
         </main>
       </ErrorBoundry>
