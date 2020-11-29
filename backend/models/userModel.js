@@ -10,7 +10,6 @@ const userSchema = mongoose.Schema(
       // добовление поля с доп параметрами
       type: String,
       required: true,
-      default: 'Enter you name',
     },
     email: {
       // добовление поля с доп параметрами

@@ -12,7 +12,7 @@ export const cartReducer = (state = {cartItems: [...initialState]}, action) => {
         return {
           ...state,
           // если товар уже был добавлен, то возвращаем новый массив и изменяем поступивший товар
-          cartItems: state.cartItems.map((item) => item._id === existItem._id ? product : item )
+          cartItems: state.cartItems.map((oldItem) => oldItem._id === existItem._id ? product : oldItem )
         }
       } else {
         return {

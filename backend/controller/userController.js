@@ -1,5 +1,4 @@
 import asyncHandler from 'express-async-handler'
-import bcrypt from 'bcryptjs'
 import User from '../models/userModel.js'
 import generateToken from '../utils/generateToken.js'
 import { errorThrow } from '../utils/util.js';
@@ -34,7 +33,7 @@ export const authUser = asyncHandler(async (req, res) => {
 // @access Public
 export const regUser = asyncHandler(async (req, res) => {
 
-  const {email, password} = req.body
+  const {email, password, name} = req.body
   // ищем в базе пользователя по email
   const userExists = await User.findOne({email})
   if (userExists) {
@@ -42,7 +41,8 @@ export const regUser = asyncHandler(async (req, res) => {
   }
   const newUser = {
     email,
-    password
+    password,
+    name
   }
   const user = await User.create(newUser)
   if (user) {
