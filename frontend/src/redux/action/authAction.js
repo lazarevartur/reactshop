@@ -3,7 +3,7 @@ import {
   USER_CLEAN_ERROR,
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
-  USER_LOGIN_SUCCESS, USER_REGISTER_FAIL,
+  USER_LOGIN_SUCCESS, USER_LOGOUT, USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS
 } from '../type';
 import { storage } from '../../utils/util';
@@ -46,8 +46,14 @@ export const register = (candidate) => async (dispatch) => {
     dispatch(userRegisterFail(e))
   }
 }
+export const logout = () => (dispatch) => {
+  dispatch(userLogout())
+  localStorage.removeItem('userInfo')
+}
+
 export const userCleanError = () => ({type: USER_CLEAN_ERROR})
 
+const userLogout = () => ({type: USER_LOGOUT})
 const userLoginReq = () => ({type: USER_LOGIN_REQUEST})
 const userLoginScs = (data) => ({type: USER_LOGIN_SUCCESS, payload: data})
 const userLoginFail = (error) => ({

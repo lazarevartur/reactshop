@@ -8,8 +8,8 @@ import {
 } from '../type';
 import { storage } from '../../utils/util';
 
-const initialState = storage('userInfo') ? storage('userInfo') : {}
-export const authReducer = (state = {userInfo: initialState}, action) => {
+const initialState = storage('userInfo') ? {userInfo:storage('userInfo')} : null
+export const authReducer = (state = {...initialState}, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
       return {loading: true}

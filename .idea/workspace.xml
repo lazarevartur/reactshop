@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ace2235-773e-4d11-850a-9bc58e608a7a" name="Default Changelist" comment="create auth/register module">
-      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/auth/Auth.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/auth/login/Login.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/auth/registration/Registration.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controller/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controller/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/userModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/auth/Auth.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/login/Login.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/cartReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/type.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +17,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="cart" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -97,7 +91,9 @@
       <workItem from="1606389068146" duration="601000" />
       <workItem from="1606430250545" duration="12745000" />
       <workItem from="1606515879919" duration="14361000" />
-      <workItem from="1606594946851" duration="17831000" />
+      <workItem from="1606594946851" duration="18129000" />
+      <workItem from="1606687662179" duration="56000" />
+      <workItem from="1606688062337" duration="8487000" />
     </task>
     <task id="LOCAL-00001" summary="added functionality to cart">
       <created>1606270433135</created>
@@ -106,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606270433135</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="create auth/register module">
+      <created>1606617284753</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606617284753</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

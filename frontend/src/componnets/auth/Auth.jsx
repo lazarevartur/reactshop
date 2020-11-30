@@ -4,21 +4,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, register, userCleanError } from '../../redux/action/authAction';
 
 const Auth = (props) => {
+
   const dispatch = useDispatch()
   const [typeModal, setTypeModal] = useState('login')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
-  const {loading, error} = useSelector(state => state.userLogin)
+  const {loading, error, userInfo} = useSelector(state => state.userLogin)
   const typeModalHandler = (type) => {
     setTypeModal(type)
   }
   useEffect(() => {
+    if (userInfo) {
+      props.onHide()
+    }
+  },[userInfo])
+  useEffect(() => {
     if (error) {
       dispatch(userCleanError())
     }
-
-  },[typeModal])
+  },[typeModal, props.show])
   const inputHandler = (e) => {
     switch (e.target.type) {
       case 'email':
