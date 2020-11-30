@@ -65,6 +65,23 @@ export const userProfile = asyncHandler(async (req, res) => {
   }
 
 })
+export const updateUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.userId._id)
+  const {name, email, password} = req.body
+  if (user) {
+    user.name = name || user.name
+    user.email = email || user.email
+    if(password) {
+      user.password = password
+      console.log('password ',password)
+    }
+    await user.save()
+  } else {
+    res.status(401)
+    throw new Error('auth Fail')
+  }
+  res.json(getCurrentUser(user))
+})
 
 const getCurrentUser = (user) => {
   return {

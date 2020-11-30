@@ -57,7 +57,6 @@ const Header = () => {
                       { singIn }
                     </Nav.Link>
                 }
-
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -70,3 +69,5 @@ const Header = () => {
   )
 }
 export default Header
+
+

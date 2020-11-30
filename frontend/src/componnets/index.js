@@ -10,5 +10,8 @@ export { default as Message } from './message/Message'
 export { default as Loader } from './loader/Loader'
 export { default as Registration } from './auth/registration/Registration'
 export { default as Auth } from './auth/Auth'
+export { default as ProfilePage } from './page/profilePage/ProfilePage'
+export { default as FormInput } from './form/formInput/FormInput'
+
 
 

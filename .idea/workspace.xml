@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ace2235-773e-4d11-850a-9bc58e608a7a" name="Default Changelist" comment="create auth/register module">
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/form/formInput/FormInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/profilePage/ProfilePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/router/ProtecRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/auth/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controller/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controller/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middleware/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/loginRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/loginRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +31,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/frontend/node_modules/react-router-dom/esm/react-router-dom.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1kkwa2MXZMKeWT14iHleIuvwZKI" />
@@ -48,6 +55,9 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 203.5981.31\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -94,6 +104,7 @@
       <workItem from="1606594946851" duration="18129000" />
       <workItem from="1606687662179" duration="56000" />
       <workItem from="1606688062337" duration="8487000" />
+      <workItem from="1606729417552" duration="14347000" />
     </task>
     <task id="LOCAL-00001" summary="added functionality to cart">
       <created>1606270433135</created>
@@ -109,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606617284753</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add logout/profile">
+      <created>1606729615371</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606729615372</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,7 +158,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added functionality to cart" />
     <MESSAGE value="create auth/register module" />
-    <option name="LAST_COMMIT_MESSAGE" value="create auth/register module" />
+    <MESSAGE value="add logout/profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="add logout/profile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

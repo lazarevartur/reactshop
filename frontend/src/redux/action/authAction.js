@@ -46,6 +46,26 @@ export const register = (candidate) => async (dispatch) => {
     dispatch(userRegisterFail(e))
   }
 }
+
+export const profile = () => (dispatch) => {
+  // try {
+  //   dispatch(userLoginReq())
+  //   // Устанавливаем заголовки в запросе типа json
+  //   const config = {
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }
+  //   const {data} = await axios.post(`/api/users/login/`, {
+  //     email, password
+  //   }, config)
+  //   dispatch(userLoginScs(data))
+  //   storage('userInfo', data)
+  // } catch (e) {
+  //   dispatch(userLoginFail(e))
+  // }
+}
+
 export const logout = () => (dispatch) => {
   dispatch(userLogout())
   localStorage.removeItem('userInfo')
