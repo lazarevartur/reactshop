@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import { en } from '../../language/language'
@@ -12,7 +12,14 @@ const {title, singIn, cart} = en
 const Header = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const dispatch = useDispatch()
+  const [name, setName] = useState('')
   const {userInfo} = useSelector(state => state.userLogin)
+  const {user} = useSelector(state => state.userDetail)
+  useEffect(() => {
+    if (userInfo) {
+      setName(user ? user.name : userInfo.name)
+    }
+  }, [user])
   const openModal = (e) => {
     e.target.blur()
     setModalShow(true)
@@ -46,7 +53,7 @@ const Header = () => {
                 </LinkContainer>
                 {
                   userInfo
-                    ? <NavDropdown title={ userInfo.name } id='userinfo'>
+                    ? <NavDropdown title={ name } id='userinfo'>
                       <LinkContainer to="/profile">
                        <NavDropdown.Item>Profile</NavDropdown.Item>
                       </LinkContainer>

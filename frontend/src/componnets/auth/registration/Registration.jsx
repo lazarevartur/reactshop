@@ -2,10 +2,11 @@ import React from 'react';
 import { Button, Col, Container, Form, Modal, Row } from 'react-bootstrap';
 import { Loader, Message } from '../../index';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Registration = (props) => {
-  const {setType, handler, name, email, password, formHandler, loading, error, ...rest} = props
-
+  const {setType, handler, name, email, password, formHandler, ...rest} = props
+  const {loading, error} = useSelector(state => state.userRegister)
   return (
     <Modal
       { ...rest }

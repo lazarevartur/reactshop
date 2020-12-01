@@ -65,8 +65,6 @@ const Auth = (props) => {
                       name={name}
                       email={email}
                       password={password}
-                      loading={loading}
-                      error={error}
         />}
     </>
   )
