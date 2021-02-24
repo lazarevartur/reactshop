@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { en } from '../../language/language'
-import { Auth } from '../index';
-import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../redux/action/authAction';
+import { Auth } from '../index'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../../redux/action/authAction'
 
 const {title, singIn, cart} = en
 
 
 const Header = () => {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = React.useState(false)
   const dispatch = useDispatch()
   const [name, setName] = useState('')
   const {userInfo} = useSelector(state => state.userLogin)
@@ -19,14 +19,14 @@ const Header = () => {
     if (userInfo) {
       setName(user ? user.name : userInfo.name)
     }
-  }, [user])
+  }, [userInfo, user])
   const openModal = (e) => {
     e.target.blur()
     setModalShow(true)
   }
- const logoutHandler = () => {
+  const logoutHandler = () => {
     dispatch(logout())
- }
+  }
   return (
     <>
       <header>
@@ -55,14 +55,17 @@ const Header = () => {
                   userInfo
                     ? <NavDropdown title={ name } id='userinfo'>
                       <LinkContainer to="/profile">
-                       <NavDropdown.Item>Profile</NavDropdown.Item>
+                        <NavDropdown.Item>Profile</NavDropdown.Item>
                       </LinkContainer>
-                      <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                      <NavDropdown.Item onClick={ logoutHandler }>Logout</NavDropdown.Item>
                     </NavDropdown>
-                    : <Nav.Link onClick={ openModal }>
-                      <i className="fas fa-user px-1"/>
-                      { singIn }
-                    </Nav.Link>
+                    :
+                    <LinkContainer to="/login">
+                      <Nav.Link>
+                        <i className="fas fa-user px-1"/>
+                        { singIn }
+                      </Nav.Link>
+                    </LinkContainer>
                 }
               </Nav>
             </Navbar.Collapse>

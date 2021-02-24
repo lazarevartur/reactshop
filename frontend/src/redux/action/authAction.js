@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {
+  CART_REMOVE_SHIPPING_ADDRESS,
   USER_CLEAN_ERROR,
   USER_DETAIL_FAIL,
   USER_DETAIL_REQUEST,
@@ -13,9 +14,9 @@ import {
   USER_REGISTER_SUCCESS,
   USER_UPDATE_PROFILE_FAIL,
   USER_UPDATE_PROFILE_REQUEST,
-  USER_UPDATE_PROFILE_SUCCESS
-} from '../type';
-import { storage } from '../../utils/util';
+  USER_UPDATE_PROFILE_SUCCESS,
+} from '../type'
+import { Storage, storage } from '../../utils/util'
 
 export const login = ({email, password}) => async (dispatch) => {
   try {
@@ -30,7 +31,7 @@ export const login = ({email, password}) => async (dispatch) => {
       email, password
     }, config)
     dispatch(userLoginScs(data))
-    dispatch(profile())
+    dispatch((profile))
     storage('userInfo', data)
   } catch (e) {
     dispatch(userLoginFail(e))
@@ -47,8 +48,11 @@ export const register = (candidate) => async (dispatch) => {
     }
     const {data} = await axios.post(`/api/users/`, candidate, config)
     dispatch(userRegisterScs(data))
-    console.log(data)
-    dispatch(userLoginScs(data))
+    dispatch(login({
+      email: candidate.email,
+      password: candidate.password
+    }))
+    storage('userInfo', data)
   } catch (e) {
     dispatch(userRegisterFail(e))
   }
@@ -95,7 +99,10 @@ export const updateProfile = (data, id = 'profile') => async (dispatch, getState
 
 export const logout = () => (dispatch) => {
   dispatch(userLogout())
-  localStorage.removeItem('userInfo')
+  dispatch({type: CART_REMOVE_SHIPPING_ADDRESS})
+  Storage.remove('userInfo')
+  Storage.remove('userDetail')
+  Storage.remove('shippingAddress')
 }
 
 export const userCleanError = () => ({type: USER_CLEAN_ERROR})

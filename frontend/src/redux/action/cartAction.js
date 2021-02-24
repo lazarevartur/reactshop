@@ -1,5 +1,12 @@
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../type'
-import axios from 'axios';
+import {
+  CART_ADD_ITEM,
+  CART_CHANGE_CHECKOUT_PAGE,
+  CART_REMOVE_ITEM,
+  CART_SAVE_PAYMENT_METHOD,
+  CART_SAVE_SHIPPING_ADDRESS,
+} from '../type'
+import axios from 'axios'
+import { Storage } from '../../utils/util'
 
 export const cartAddItem = (id, qty) => async (dispatch, getState) => {
   const {data} = await axios.get(`/api/products/${ id }`)
@@ -12,15 +19,37 @@ export const cartAddItem = (id, qty) => async (dispatch, getState) => {
       image,
       price,
       countInStock,
-      qty
-    }
+      qty,
+    },
   })
-  localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
+  localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems))
 }
 export const cartRemoveItem = (_id) => (dispatch, getState) => {
-  dispatch( {
+  dispatch({
     type: CART_REMOVE_ITEM,
-    payload: _id
+    payload: _id,
   })
-  localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
+  localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems))
+}
+export const cartSaveAddress = (address) => (dispatch) => {
+  dispatch({
+    type: CART_SAVE_SHIPPING_ADDRESS,
+    payload: address,
+  })
+  Storage.save('shippingAddress', address)
+}
+
+export const cartSavePaymentMethod = (method) => (dispatch) => {
+  dispatch({
+    type:CART_SAVE_PAYMENT_METHOD,
+    payload: method
+  })
+  Storage.save('paymentMethod', method)
+}
+
+export const cartChangeCheckOutPage = (page) => (dispatch) =>{
+  dispatch({
+    type:CART_CHANGE_CHECKOUT_PAGE,
+    payload: page
+  })
 }

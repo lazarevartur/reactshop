@@ -5,18 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ace2235-773e-4d11-850a-9bc58e608a7a" name="Default Changelist" comment="create auth/register module">
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/StepList/Step/Step.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/StepList/Step/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/StepList/StepList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/form/FormContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/orderItems/OrderItems.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/orderItems/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/authorization/RegistrationPage/RegistrationPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/authorization/loginPage/LoginPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/paymentPage/PaymentPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/paymentPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/placeOrderPage/PlaceOrderPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/placeOrderPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/page/shippingPage/ShippingPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controller/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controller/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middleware/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/auth/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/auth/registration/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/auth/registration/Registration.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/form/formInput/FormInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/form/formInput/FormInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/auth/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/auth/login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/profilePage/ProfilePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/profilePage/ProfilePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/router/ProtecRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/router/ProtecRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useAuthorization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/action/cartAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/action/cartAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/cartReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="cart" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,12 +78,25 @@
     <option name="enabled" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\www\reactshop\frontend\src\componnets\page\authorization" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\www\reactshop\frontend\src\componnets\auth" />
       <recent name="C:\www\reactshop\frontend\src\componnets" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="data:import" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="data:import" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -77,9 +107,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.data:import" />
       </list>
     </recent_temporary>
   </component>
@@ -106,6 +148,31 @@
       <workItem from="1606687662179" duration="56000" />
       <workItem from="1606688062337" duration="8487000" />
       <workItem from="1606729417552" duration="29196000" />
+      <workItem from="1606863420824" duration="1150000" />
+      <workItem from="1606944774719" duration="668000" />
+      <workItem from="1607570743826" duration="9634000" />
+      <workItem from="1607743906616" duration="4052000" />
+      <workItem from="1608524785604" duration="2321000" />
+      <workItem from="1608579852659" duration="2451000" />
+      <workItem from="1609212862443" duration="3425000" />
+      <workItem from="1609297991345" duration="1031000" />
+      <workItem from="1609299069077" duration="196000" />
+      <workItem from="1609299298042" duration="8930000" />
+      <workItem from="1609656371843" duration="32000" />
+      <workItem from="1609731670541" duration="1611000" />
+      <workItem from="1610336285193" duration="822000" />
+      <workItem from="1610473803269" duration="23000" />
+      <workItem from="1610473958550" duration="217000" />
+      <workItem from="1610986920409" duration="55000" />
+      <workItem from="1610987006735" duration="2110000" />
+      <workItem from="1611024883882" duration="738000" />
+      <workItem from="1613739970121" duration="921000" />
+      <workItem from="1613745456981" duration="15000" />
+      <workItem from="1613747223009" duration="518000" />
+      <workItem from="1613752814036" duration="4906000" />
+      <workItem from="1614034556684" duration="93000" />
+      <workItem from="1614118670923" duration="7226000" />
+      <workItem from="1614173514287" duration="7150000" />
     </task>
     <task id="LOCAL-00001" summary="added functionality to cart">
       <created>1606270433135</created>

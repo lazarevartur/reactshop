@@ -5,7 +5,7 @@ import { errorThrow } from '../utils/util.js';
 
 
 // @desc Auth user && get token
-// @route POST /api/users/login
+// @route POST /api/users/loginPage
 // @access Public
 export const authUser = asyncHandler(async (req, res) => {
 
