@@ -5,22 +5,45 @@ import StepList from '../../StepList/StepList'
 import { Message } from '../../index'
 import { Button, Card, Col, ListGroup, Row } from 'react-bootstrap'
 import { OrderItems } from '../../orderItems'
+import { createOrder } from '../../../redux/action/orderAction'
 
-const PlaceOrderPage = () => {
+const PlaceOrderPage = ({history}) => {
   const cart = useSelector((state) => state.cart)
+  const {success, error, order} = useSelector((state) => state.orderCreate)
   const {cartItems} = cart
   const {checkoutPage, paymentMethod, shippingAddress} = cart.checkout
   const isEmptyCart = cartItems.length === 0
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(cartChangeCheckOutPage(3))
   }, [])
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${ order._id }`)
+    }
+  }, [success, history])
+  //TODO ПЕРЕДЕЛАТЬ МУТАЦИЯ СТЕТЙТА!!!!
+  cart.totalPriceItems = +cartItems.reduce((sum, product) => {
+    return sum + (product.price * product.qty)
+  }, 0).toFixed(2)
+  cart.shippingPrice = cart.totalPriceItems > 100 ? 0 : 100
+  cart.tax = +(cart.totalPriceItems * 0.2).toFixed(2)
+  cart.totalPrice = +(cart.totalPriceItems + cart.shippingPrice + cart.tax).toFixed(2)
 
-  const totalPrice = (() => {
-    return  cartItems.reduce((sum, product) => {
-      return sum + (product.price * product.qty)
-    },0)
-  })()
+  const handlerForm = () => {
+    const newOrder = {
+      totalPriceItems: cart.totalPriceItems,
+      shippingPrice: cart.shippingPrice,
+      tax: cart.tax,
+      totalPrice: cart.totalPrice,
+      paymentMethod,
+      shippingAddress,
+      orderItems: cart.cartItems,
+    }
+    dispatch(createOrder(newOrder))
+  }
+
   return (
     <>
       <Row className='justify-content-center'>
@@ -63,7 +86,7 @@ const PlaceOrderPage = () => {
                     Items
                   </Col>
                   <Col>
-                    {cartItems.length}
+                    ${ cart.totalPriceItems }
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -73,7 +96,7 @@ const PlaceOrderPage = () => {
                     Shipping
                   </Col>
                   <Col>
-                   $0,00
+                    ${ cart.shippingPrice }
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -83,7 +106,7 @@ const PlaceOrderPage = () => {
                     Tax
                   </Col>
                   <Col>
-                    250
+                    ${ cart.tax }
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -93,7 +116,7 @@ const PlaceOrderPage = () => {
                     Total
                   </Col>
                   <Col>
-                    {totalPrice}
+                    ${ cart.totalPrice }
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -102,8 +125,10 @@ const PlaceOrderPage = () => {
                   type={ 'button' }
                   className='btn btn-block'
                   disabled={ isEmptyCart }
+                  onClick={ handlerForm }
                 >Place Order</Button>
               </ListGroup.Item>
+              {error && <Message>{error}</Message>}
             </ListGroup>
           </Card>
         </Col>

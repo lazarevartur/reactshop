@@ -10,7 +10,7 @@ const ShippingPage = ({history}) => {
   const {shippingAddress, checkoutPage} = cart.checkout
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
+  const [postCode, setPostalCode] = useState(shippingAddress.postCode)
   const [country, setCountry] = useState(shippingAddress.country)
   const dispatch = useDispatch()
 
@@ -19,7 +19,7 @@ const ShippingPage = ({history}) => {
     const data = {
       address,
       city,
-      postalCode,
+      postCode,
       country,
     }
     dispatch(cartSaveAddress(data))
@@ -54,7 +54,7 @@ const ShippingPage = ({history}) => {
         />
         <FormInput
           name='Postal Code'
-          value={ postalCode }
+          value={ postCode }
           placeholder="Postal Code"
           handler={ (e) => setPostalCode(e.target.value) }
         />

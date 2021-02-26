@@ -3,7 +3,7 @@ import { FormContainer } from '../../index'
 import StepList from '../../StepList/StepList'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartChangeCheckOutPage, cartSavePaymentMethod } from '../../../redux/action/cartAction'
-import { Button, Col, Form, Row } from 'react-bootstrap'
+import { Button, Col, Form } from 'react-bootstrap'
 
 const PaymentPage = ({history}) => {
   const cart = useSelector((state) => state.cart)
@@ -32,10 +32,20 @@ const PaymentPage = ({history}) => {
             <Form.Check
               type="radio"
               label="PayPal or Credit Card"
-              name="formHorizontalRadios"
-              id="formHorizontalRadios1"
-              defaultChecked={paymentMethod === 'PayPal'}
-              onChange={ () => setPayMethod('PayPal') }
+              name="paymentMethod"
+              id="PayPal"
+              value='PayPal'
+              defaultChecked={ paymentMethod === 'PayPal' }
+              onChange={ (e) => setPayMethod(e.target.value) }
+            />
+            <Form.Check
+              type="radio"
+              label="Stripe"
+              name="paymentMethod"
+              id="Stripe"
+              value='Stripe'
+              defaultChecked={ paymentMethod === 'Stripe' }
+              onChange={ (e) => setPayMethod(e.target.value) }
             />
           </Col>
         </Form.Group>

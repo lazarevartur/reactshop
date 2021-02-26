@@ -27,13 +27,12 @@ const orderSchema = mongoose.Schema(
         price: { type: Number, required: true },
         product: {
           type: mongoose.Schema.Types.ObjectId,
-          required: true,
           ref: 'Product',
         },
       },
     ],
-    shippingAdress: {
-      adress: { type: String, required: true },
+    shippingAddress: {
+      address: { type: String, required: true },
       city: { type: String, required: true },
       postCode: { type: Number, required: true },
       country: { type: String, required: true },
@@ -46,14 +45,14 @@ const orderSchema = mongoose.Schema(
       id: { type: String },
       status: { type: String },
       update_time: { type: String },
-      emeail_adress: { type: String },
+      email_address: { type: String },
     },
-    taxPrice: {
+    tax: {
       type: Number,
       required: true,
       default: 0.0,
     },
-    shipingPrice: {
+    shippingPrice: {
       type: Number,
       required: true,
       default: 0.0,

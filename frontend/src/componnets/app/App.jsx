@@ -20,6 +20,7 @@ import Switch from 'react-bootstrap/Switch';
 import ProtectRoute from '../router/ProtecRoute';
 import { PaymentPage } from '../page/paymentPage'
 import { PlaceOrderPage } from '../page/placeOrderPage'
+import { OrderPage } from '../page/orderPage'
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
               <ProtectRoute path="/shipping" component={ ShippingPage }/>
               <ProtectRoute path="/payment" component={ PaymentPage }/>
               <ProtectRoute path="/placeorder" component={ PlaceOrderPage }/>
+              <ProtectRoute path="/order/:id" component={ OrderPage }/>
               <ProtectRoute path='/profile' exact component={ ProfilePage } />
             </Switch>
           </Container>
