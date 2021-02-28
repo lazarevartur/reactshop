@@ -11,6 +11,7 @@ const OrderSummary = ({
   CustomButton,
   isDisabled,
   onClick,
+  isHideButton,
 }) => {
   return (
     <Card>
@@ -42,24 +43,30 @@ const OrderSummary = ({
             <Col>${totalPrice}</Col>
           </Row>
         </ListGroup.Item>
-        <ListGroup.Item>
-          {CustomButton ? (
-            CustomButton
-          ) : (
-            <Button
-              type={"button"}
-              className="btn btn-block"
-              disabled={isDisabled}
-              onClick={onClick}
-            >
-              Place Order
-            </Button>
-          )}
-        </ListGroup.Item>
+        {!isHideButton ? (
+          <ListGroup.Item>
+            {CustomButton ? (
+              CustomButton
+            ) : (
+              <Button
+                type={"button"}
+                className="btn btn-block"
+                disabled={isDisabled}
+                onClick={onClick}
+              >
+                Place Order
+              </Button>
+            )}
+          </ListGroup.Item>
+        ) : null}
+
         {error && <Message>{error}</Message>}
       </ListGroup>
     </Card>
   );
 };
 
-export default OrderSummary
+export default OrderSummary;
+OrderSummary.defaultProps = {
+  isHideButton: false,
+};

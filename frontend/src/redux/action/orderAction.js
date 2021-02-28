@@ -8,6 +8,14 @@ import {
   ORDER_DETAIL_SUCCESS,
   ORDER_DETAIL_RESET,
   ORDER_CREATE_RESET,
+  ORDER_PAY_RESET,
+  ORDER_PAY_REQUEST,
+  ORDER_PAY_SUCCESS,
+  ORDER_PAY_FAIL,
+  ORDERS_REQUEST,
+  ORDERS_SUCCESS,
+  ORDERS_FAIL,
+  ORDERS_RESET,
 } from "../type";
 
 export const createOrder = (order) => async (dispatch, getState) => {
@@ -52,8 +60,61 @@ export const getDetailOrder = (id) => async (dispatch, getState) => {
   }
 };
 
+export const getOrders = () => async (dispatch, getState) => {
+  const {
+    userLogin: { userInfo },
+  } = getState();
+  try {
+    dispatch(ordersReq());
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.get(`/api/order/myorder`, config);
+    dispatch(ordersScs(data));
+  } catch (error) {
+    console.log(error);
+    dispatch(ordersFail(error.message));
+  }
+};
+
+export const payOrder = (orderId, paymentResult) => async (
+  dispatch,
+  getState
+) => {
+  const {
+    userLogin: { userInfo },
+  } = getState();
+  try {
+    dispatch(orderPayReq());
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.put(
+      `/api/order/${orderId}/pay`,
+      paymentResult,
+      config
+    );
+    dispatch(orderPayScs(data));
+  } catch (error) {
+    console.log(error);
+    dispatch(orderPayFail(error.message));
+  }
+};
+
 export const resetDetailOrder = () => ({ type: ORDER_DETAIL_RESET });
 export const resetCreateOrder = () => ({ type: ORDER_CREATE_RESET });
+export const resetPayOrder = () => ({ type: ORDER_PAY_RESET });
+export const resetOrders = () => ({ type: ORDERS_RESET });
 
 const orderCreateReq = () => ({ type: ORDER_CREATE_REQUEST });
 const orderCreateScs = (data) => ({
@@ -67,6 +128,7 @@ const orderCreateFail = (error) => ({
       ? error.response.data.message
       : error.message,
 });
+
 const orderDetailReq = () => ({ type: ORDER_DETAIL_REQUEST });
 const orderDetailScs = (data) => ({
   type: ORDER_DETAIL_SUCCESS,
@@ -74,6 +136,32 @@ const orderDetailScs = (data) => ({
 });
 const orderDetailFail = (error) => ({
   type: ORDER_DETAIL_FAIL,
+  payload:
+    error.response && error.response.data.message
+      ? error.response.data.message
+      : error.message,
+});
+
+const ordersReq = () => ({ type: ORDERS_REQUEST });
+const ordersScs = (data) => ({
+  type: ORDERS_SUCCESS,
+  payload: data,
+});
+const ordersFail = (error) => ({
+  type: ORDERS_FAIL,
+  payload:
+    error.response && error.response.data.message
+      ? error.response.data.message
+      : error.message,
+});
+
+const orderPayReq = () => ({ type: ORDER_PAY_REQUEST });
+const orderPayScs = (data) => ({
+  type: ORDER_PAY_SUCCESS,
+  payload: data,
+});
+const orderPayFail = (error) => ({
+  type: ORDER_PAY_FAIL,
   payload:
     error.response && error.response.data.message
       ? error.response.data.message

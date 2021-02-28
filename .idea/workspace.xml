@@ -7,27 +7,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ace2235-773e-4d11-850a-9bc58e608a7a" name="Default Changelist" comment="create checkout flow">
-      <change beforePath="$PROJECT_DIR$/.idea/reactshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/reactshop.iml" afterDir="false" />
+    <list default="true" id="2ace2235-773e-4d11-850a-9bc58e608a7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/componnets/orders/Orders.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controller/orderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controller/orderController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controller/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controller/userController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/orderRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/componnets/OrderSummary/OrderSummary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/OrderSummary/OrderSummary.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/authorization/loginPage/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/authorization/loginPage/LoginPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/cartPage/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/cartPage/CartPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/app/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/loader/Loader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/loader/Loader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/orderPage/OrderPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/orderPage/OrderPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/placeOrderPage/PlaceOrderPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/placeOrderPage/PlaceOrderPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/shippingPage/ShippingPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/shippingPage/ShippingPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/action/cartAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/action/cartAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/componnets/page/profilePage/ProfilePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/componnets/page/profilePage/ProfilePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/action/authAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/action/orderAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/action/orderAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/cartReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/authReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/reducer/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/reducer/orderReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/redux/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\www\reactshop\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 203.5981.31\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -192,7 +191,10 @@
       <workItem from="1614379991974" duration="6072000" />
       <workItem from="1614386152435" duration="2572000" />
       <workItem from="1614460065061" duration="792000" />
-      <workItem from="1614461013970" duration="4173000" />
+      <workItem from="1614461013970" duration="8537000" />
+      <workItem from="1614469761693" duration="342000" />
+      <workItem from="1614470210159" duration="5493000" />
+      <workItem from="1614509357361" duration="10856000" />
     </task>
     <task id="LOCAL-00001" summary="added functionality to cart">
       <created>1606270433135</created>
@@ -229,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614185976472</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="create orderPage and orderById endpoint">
+      <created>1614465268050</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614465268050</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +272,8 @@
     <MESSAGE value="add logout/profile" />
     <MESSAGE value="create protect route '/profile', create page profile," />
     <MESSAGE value="create checkout module with paypal" />
-    <option name="LAST_COMMIT_MESSAGE" value="create checkout module with paypal" />
+    <MESSAGE value="create orderPage and orderById endpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="create orderPage and orderById endpoint" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

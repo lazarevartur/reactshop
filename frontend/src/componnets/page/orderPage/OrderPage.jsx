@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Loader, Message } from "../../index";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
@@ -8,18 +9,16 @@ import {
   getDetailOrder,
   resetDetailOrder,
   resetCreateOrder,
+  payOrder,
 } from "../../../redux/action/orderAction";
+import { PayPalButton } from "react-paypal-button-v2";
 
 const OrderPage = ({ match }) => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getDetailOrder(match.params.id));
-    return () => {
-      dispatch(resetDetailOrder());
-      dispatch(resetCreateOrder());
-    };
-  }, []);
+  const [sdkReady, setSdkReady] = useState(false);
   const orderDetail = useSelector((state) => state.orderDetail);
+  const orderPay = useSelector((state) => state.orderPay);
+  const { loading: loadingPay, success: successPay } = orderPay;
   const {
     _id,
     isDeliverd,
@@ -30,7 +29,37 @@ const OrderPage = ({ match }) => {
     tax,
     totalPrice,
     shippingPrice,
+    paidAt,
   } = orderDetail.order;
+
+  useEffect(() => {
+    const addPayPalScript = async () => {
+      const { data: clientId } = await axios.get("/api/config/paypal");
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+      script.async = true;
+      script.onload = () => {
+        setSdkReady(true);
+      };
+      document.body.appendChild(script);
+    };
+    if (!Object.assign(orderDetail.order).length || successPay) {
+      dispatch(getDetailOrder(match.params.id));
+    }
+    if (!isPaid) {
+      if (!window.paypal) {
+        addPayPalScript();
+      } else {
+        setSdkReady(true);
+      }
+    }
+    return () => {
+      dispatch(resetDetailOrder());
+      dispatch(resetCreateOrder());
+    };
+  }, [successPay]);
+
   let totalPriceItems = 0;
   if (orderItems) {
     totalPriceItems = +orderItems
@@ -39,6 +68,13 @@ const OrderPage = ({ match }) => {
       }, 0)
       .toFixed(2);
   }
+
+  const successHandler = (paymentResult) => {
+    dispatch(payOrder(match.params.id, paymentResult));
+  };
+  const test = () => {
+    console.log("ura");
+  };
 
   return (
     <>
@@ -74,7 +110,7 @@ const OrderPage = ({ match }) => {
                 <h2>PAYMENT METHOD</h2>
                 <p>Method: {paymentMethod}</p>
                 {isPaid ? (
-                  <Message variant={"success"}>Paid</Message>
+                  <Message variant={"success"}>Paid {paidAt}</Message>
                 ) : (
                   <Message variant={"danger"}>No Paid</Message>
                 )}
@@ -90,12 +126,24 @@ const OrderPage = ({ match }) => {
             </ListGroup>
           </Col>
           <Col md={4}>
-            <OrderSummary
-              tax={tax}
-              shippingPrice={shippingPrice}
-              totalPrice={totalPrice}
-              totalPriceItems={totalPriceItems}
-            />
+            {!sdkReady ? (
+              <Loader />
+            ) : (
+              <OrderSummary
+                tax={tax}
+                shippingPrice={shippingPrice}
+                totalPrice={totalPrice}
+                totalPriceItems={totalPriceItems}
+                isHideButton={isPaid}
+                CustomButton={
+                  <PayPalButton
+                    amount={totalPrice}
+                    onSuccess={successHandler}
+                    onApprove={test}
+                  />
+                }
+              />
+            )}
           </Col>
         </Row>
       )}

@@ -9,76 +9,89 @@ import {
   USER_LOGOUT,
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
-  USER_REGISTER_SUCCESS, USER_UPDATE_PROFILE_FAIL,
+  USER_REGISTER_SUCCESS,
+  USER_UPDATE_PROFILE_FAIL,
   USER_UPDATE_PROFILE_REQUEST,
-  USER_UPDATE_PROFILE_SUCCESS
-} from '../type';
-import { storage } from '../../utils/util';
+  USER_UPDATE_PROFILE_SUCCESS,
+  USER_DETAIL_RESET,
+} from "../type";
+import { storage } from "../../utils/util";
 
-const initialState = storage('userInfo') ? {userInfo:storage('userInfo')} : null
-export const authReducer = (state = {...initialState}, action) => {
+const initialState = storage("userInfo")
+  ? { userInfo: storage("userInfo") }
+  : null;
+export const authReducer = (state = { ...initialState }, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
-      return {loading: true}
+      return { loading: true };
     case USER_LOGIN_SUCCESS:
       return {
         userInfo: action.payload,
         loading: false,
-      }
+      };
     case USER_LOGIN_FAIL:
       return {
         loading: false,
         error: action.payload,
-      }
+      };
     case USER_LOGOUT:
-      return {}
+      return {};
     case USER_CLEAN_ERROR:
-      return {loading: false}
+      return { loading: false };
     default:
-      return state
+      return state;
   }
-}
+};
 export const userRegisterReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_REGISTER_REQUEST:
-      return {loading: true}
+      return { loading: true };
     case USER_REGISTER_SUCCESS:
-      return {loading: false, newUser: action.payload}
+      return { loading: false, newUser: action.payload };
     case USER_REGISTER_FAIL:
       return {
         loading: false,
         error: action.payload,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
-let initialStateDetail = storage('userDetail') ? {user:storage('userDetail')} : null
-  export const userDetailReducer = (state = {...initialStateDetail}, action) => {
+};
+let initialStateDetail = storage("userDetail")
+  ? { user: storage("userDetail") }
+  : null;
+export const userDetailReducer = (
+  state = { ...initialStateDetail },
+  action
+) => {
   switch (action.type) {
     case USER_DETAIL_REQUEST:
-      return {loading: true}
-      case USER_DETAIL_SUCCESS:
-      return {loading: false, user: action.payload }
+      return { loading: true };
+    case USER_DETAIL_SUCCESS:
+      return { loading: false, user: action.payload };
     case USER_DETAIL_FAIL:
       return {
         loading: false,
         error: action.payload,
-      }
-    default: return state
+      };
+    case USER_DETAIL_RESET:
+      return {};
+    default:
+      return state;
   }
-}
+};
 export const userUpdateReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_UPDATE_PROFILE_REQUEST:
-      return {loading: true}
-      case USER_UPDATE_PROFILE_SUCCESS:
-      return {loading: false, success: true }
+      return { loading: true };
+    case USER_UPDATE_PROFILE_SUCCESS:
+      return { loading: false, success: true };
     case USER_UPDATE_PROFILE_FAIL:
       return {
         loading: false,
         error: action.payload,
-      }
-    default: return state
+      };
+    default:
+      return state;
   }
-}
+};
