@@ -15,6 +15,7 @@ const protect = asyncHandler(async (req, res, next) => {
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
       // кладем id в запрос
       req.userId = await User.findById(decoded.id).select('_id')
+      console.log(req.userId)
       // переходим к следуйшиму посреднику
       next()
     } catch (e) {
